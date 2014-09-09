@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>Test</title>
+    <style type="text/css">
+      body {
+        color: #CC9;
+        background-color: #000;
+        text-align: center;
+      }
+      hr {
+        background-color: #000;
+        border: 1px double #F00;
+        height: 5px;
+      }
+      #board {
+        cursor: default;
+        font-family: Monospace;
+        color: #CC9;
+        background-color: #000;
+        margin: 0px auto;
+        border: 4px double #554;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <br><br><br><br><br>
+      <hr>
+      Cavern
+      <hr>
+      <textarea style="-moz-user-select: none;" id="board" onselectstart="return false" readonly="readonly" cols="60" rows="15">
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                            \\//            
+  \\//                                       \/             
+   \/                        &#923;(")&#923;                          
+                                                            
+                                                            
+\/                                                          
+                     /&#9620;\                                    
+ /&#9620;\        /&#9620;&#9620;\   /&#9620;/&nbsp;&#9620;&#9620;\    /&#9620;&#9620;\  /&#9620;\  /&#9620;\            /&#9620;\ 
+/&nbsp;&nbsp;&nbsp;\/&#9620;&#9620;&#9620;\/&#9620;&nbsp;&nbsp;&#9620;&#9620;\/&#9620;&#9620;&nbsp;&nbsp;&#9620;&nbsp;\&nbsp;&#9620;\/&#9620;&#9620;&nbsp;&nbsp;&#9620;\/&nbsp;&nbsp;&nbsp;\/&nbsp;&nbsp;&nbsp;&#9620;\/&#9620;&#9620;&#9620;&#9620;\/\/&#9620;&nbsp;&nbsp;&nbsp;\</textarea>
+      <hr>
+      <script type="text/javascript">
+
+        var boardNode = document.getElementById ("board");
+
+      </script>
+      <script type="text/javascript" src="unicode.js"></script>
+      <script type="text/javascript" src="generic.js"></script>
+      <script type="text/javascript" src="pos.js"></script>
+      <script type="text/javascript" src="dir.js"></script>
+      <script type="text/javascript" src="box.js"></script>
+      <script type="text/javascript" src="thing.js"></script>
+      <script type="text/javascript" src="bat.js"></script>
+      <script type="text/javascript" src="drop.js"></script>
+      <script type="text/javascript" src="rope.js"></script>
+      <script type="text/javascript" src="insect.js"></script>
+      <script type="text/javascript" src="rock.js"></script>
+      <script type="text/javascript" src="stalactiteTypes.js"></script>
+      <script type="text/javascript" src="stalagmiteTypes.js"></script>
+      <script type="text/javascript" src="cavern.js"></script>
+      <script type="text/javascript" src="game.js"></script>
+      <script type="text/javascript">
+
+        function disableSelection (target) {
+          if (target.onselectstart !== undefined) {
+            target.onselectstart = function () {
+              return false;
+            };
+          }
+          if (target.style.MozUserSelect !== undefined) {
+            target.style.MozUserSelect = "none";
+          }
+          target.onmousedown = function () {
+            return false;
+          };
+        }
+
+        disableSelection (document.getElementById ("board"));
+
+      </script>
+      <script type="text/javascript">
+
+        function newGame () {
+          var game = new Game (boardNode);
+          game.start ();
+          "nop";
+        }
+
+        newGame ();
+
+      </script>
+    </div>
+  
+
+</body></html>
